@@ -3,13 +3,21 @@ require 'spec_helper'
 describe "StaticPages" do
 
   describe "Home page" do
-    it "should have content 'Welcome to my First Ruby Web Application!'" do
+
+    it "should have the h1 'Welcome to my First Ruby Web Application!'" do
       visit '/static_pages/home'
-      page.should have_selector('h1', :text => "Welcome to my First Ruby Web Application!")
+      page.should have_selector('h1', :text => 'Welcome to my First Ruby Web Application!')
     end
-    it "should have title 'Home'" do
-    	visit '/static_pages/home'
-    	page.should have_selector('title', :text => "Rebekah Chang | Home")
+
+    it "should have the base title" do
+      visit '/static_pages/home'
+      page.should have_selector('title',
+                        :text => "Rebekah Chang")
+    end
+
+    it "should not have a custom page title" do
+      visit '/static_pages/home'
+      page.should_not have_selector('title', :text => '| Home')
     end
   end
 
