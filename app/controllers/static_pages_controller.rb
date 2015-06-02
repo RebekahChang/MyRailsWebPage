@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+  	@instagram = Instagram.user_recent_media("43216518", {:count => 48})
   end
 
   def work
@@ -10,4 +11,5 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
 end

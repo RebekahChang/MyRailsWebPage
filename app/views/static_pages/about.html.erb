@@ -4,3 +4,11 @@
 <div class='non-hero about'>
 	<h1>About me</h1>
 <p>LET ME TELL YOU!... when Im done</p>
+<div class='instagram-feed'>
+		<a href="https://instagram.com/rebekahchang92/" class="btn btn-default btn-lg active" role="button">Visit me on Instagram!</a><br>
+	<div class='instagram-feed-inner'>
+		<% @instagram.each do |instagram| %>
+    	<%= image_tag instagram.images.standard_resolution.url, class: 'instagram-image' %>
+    	<% end %>
+    </div>
+</div>
